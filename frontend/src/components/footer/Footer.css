@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-weight:900;
+    text-transform: uppercase; 
+    background-color:  rgb(214, 231, 141);
+    color: black;
+    text-align: center;
+    height: 30px;
+    /* display: none; */
+}
+
+.footerText {
+    margin-top: 5px;
+}

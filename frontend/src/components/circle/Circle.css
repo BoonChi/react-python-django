@@ -1,0 +1,58 @@
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+.rectangle {
+    background: red;
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    margin-top: 50px
+}
+
+.square {
+    background: black;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    animation: blinker 1s linear infinite;
+}
+
+.circle {
+    background: blue;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px
+}
+
+.triangle {
+    width: 0px;
+    height: 0px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid brown;
+    margin: auto;
+    margin-top: 50px
+}
+
+.inverted-triangle {
+    width: 0px;
+    height: 0px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid lightcoral;
+    margin: auto;
+    margin-top: 50px
+} 
+
+.circle-wrap-text {
+    float: left;
+    width: 150px;
+    height:150px;
+    margin: 20px;
+    shape-outside: circle(50%);
+}

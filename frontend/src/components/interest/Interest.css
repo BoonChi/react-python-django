@@ -1,0 +1,9 @@
+.interest-page {
+    margin-top: 19%;
+}
+
+@media only screen and (width: 280px) {
+    .interest-page {
+        margin-top: 50%;
+    }
+}

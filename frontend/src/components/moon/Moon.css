@@ -1,0 +1,187 @@
+.moon {
+    margin: 0 50% 0;
+}
+
+.moon:hover {
+    transform: scale(2);
+    cursor: pointer;
+}
+
+.moon-circle {
+    border-radius: 50%;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+    box-shadow: -35px -1px 0px 0px yellow;
+}
+
+.eyes {
+    position:relative;
+}
+
+.left-eye {
+    top: 25%;
+    left: -40%;
+    width: 25px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.right-eye {
+    top: -5%;
+    left: -5%;
+    width: 25px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eye-ball {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background-color: black;
+    top: 25%;
+    border-radius: 50%;
+}
+
+.eye-spark {
+    position: relative;
+    width: 40%;
+    height: 40%;
+    left: 4%;
+    background-color: white;
+    border-radius: 50%;
+}
+.right-eye-ball {
+    animation: eye-blinking 0.8s ease-in-out 60s infinite alternate;
+}
+
+@keyframes eye-blinking {
+    0%, 80%{
+        position: relative;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        background-color: black;
+        top: 20%;
+        border-radius: 50%;
+    }
+    
+    20%, 50%, 100%{
+        border-top: black 3px solid;
+        background-color: transparent;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        border-radius: 0;
+    }
+}
+
+.mouth {
+    position: relative;
+    width: 15%;
+    height: 15%;
+    top: 15%;
+    left: -10%;
+    /* animation: mouth-movement 4s ease-in-out 50s infinite alternate; */
+    border-radius: 50%;
+    border-bottom: red 10px solid;
+    background-color: transparent;
+}
+
+.teeth {
+    width: 3px;
+    height: 5px;
+    background-color: white;
+    /* position: relative;
+    top: 5px;
+    left: 3px; */
+    border-radius: 0 0 50% 50%;
+}
+
+.left-teeth {
+    position: relative;
+    top: 5px;
+    left: 1px;
+}
+
+.right-teeth {
+    position: relative;
+    top: 0px;
+    left: 11px;
+}
+@keyframes mouth-movement {
+    0%, 100%{
+        border-bottom: black 5px solid;
+        background-color: transparent;
+    }
+    50% {
+        background-color: red;
+        border-bottom: 0px;
+    }
+}
+
+.moon-bottom {
+    width: 50%;
+    height: 30%;
+    position: relative;
+    top: 20%;
+    left: -20%;
+    
+}
+
+.shoes {
+    border-radius: 50%;
+    background-color: tomato;
+    width: 30%;
+    height: 30%;
+}
+
+.left-shoes {
+    animation: leg-left-movement 1s ease-in-out 1s infinite alternate;
+    position: relative;
+    left: 0%;
+}
+.right-shoes {
+    position: relative;
+    top:-28%;
+    left: 50%;
+    animation: leg-right-movement 1s ease-in-out 1s infinite alternate;
+}
+@keyframes leg-right-movement {
+  0%  ,100%{transform-origin: top right; transform: rotate(0deg);}
+  50%  {transform-origin: top right; transform: rotate(45deg);}
+}
+@keyframes leg-left-movement {
+    0%  ,100%{transform-origin: top right; transform: rotate(45deg);}
+    50%  {transform-origin: top right; transform: rotate(0deg);}
+}
+
+.moon-divider {
+    position: relative;
+    left: -40%;
+    top:-17%;
+    animation: touched-line 1s ease-in-out 1s infinite alternate;
+}
+
+@keyframes touched-line {
+    0%  ,100%{
+        background-color:mediumaquamarine; 
+        transform: scaleX(1);
+    }
+    50%  {
+        background-color:mediumaquamarine; 
+        transform: scaleX(2);
+    }
+}
+
+
+@media only screen and (min-width: 700px) {
+    .moon {
+        transform: scale(1.8);
+        margin: 5% 50% 5%;
+    }
+}

@@ -1,0 +1,212 @@
+.penguin {
+    /* Only change code below this line */
+    --penguin-skin: black;
+    --penguin-belly: white;
+    --penguin-beak: orange;
+    /* Only change code above this line */
+
+    position: relative;
+    margin: auto;
+    display: block;
+    width: 300px;
+    height: 300px;
+}
+
+.penguin:hover {
+    transform: scale(1.2);
+    z-index: 2000;
+    cursor: pointer;
+}
+.penguin-top {
+    top: 15%;
+    left: 25%;
+    background: var(--penguin-skin, gray);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+}
+
+.penguin-left-cheek {
+    top: 25%;
+    left: 30%;
+    background: var(--penguin-belly, gray);
+    width: 25%;
+    height: 30%;
+    border-radius: 100% 100% 0% 100%;
+}
+
+.penguin-left-eye {
+    top: 33%;
+    left: 38%;
+    background: var(--penguin-skin, black);
+    width: 10%;
+    height: 10%;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.penguin-right-eye {
+    top: 33%;
+    right: 38%;
+    background: var(--penguin-skin, black);
+    width: 10%;
+    height: 10%;
+    border-radius: 50% 50% 50% 50%;
+}
+.penguin-right-cheek {
+    top: 25%;
+    left: 45%;
+    background: var(--penguin-belly, gray);
+    width: 25%;
+    height: 30%;
+    border-radius: 100% 100% 100% 0%;
+}
+
+.penguin-belly {
+    top: 50%;
+    left: 25%;
+    background: var(--penguin-belly, black);
+    width: 50%;
+    height: 40%;
+    border-radius: 70% 70% 100% 100%;
+}
+
+.penguin-bottom {
+    top: 48%;
+    left: 20%;
+    background: var(--penguin-skin, gray);
+    width: 60%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+}
+
+.sparkle {
+    width: 20%;
+    height: 20%;
+    background: var(--penguin-belly,white);
+    border-radius: 50% 50% 50% 50%;
+    top: 30%;
+    left: 15%;
+}
+
+.beak {
+    top: 65%;
+    left: 25%;
+    width: 50%;
+    height: 20%;
+    z-index: 3;
+}
+
+.upper-beak {
+    top: 5%;
+    left: 40%;
+    width: 20%;
+    height: 30%;
+    background: var(--penguin-beak,yellow);
+    border-radius: 50% 50% 50% 50%;
+}
+
+.lower-beak {
+    top: 30%;
+    left: 45%;
+    width: 10%;
+    height: 20%;
+    background: var(--penguin-beak,yellow);
+    border-radius: 50% 50% 50% 50%;
+}
+
+.left-blush {
+    width: 20%;
+    height: 20%;
+    background: pink;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.right-blush {
+    right: 0;
+    width: 20%;
+    height: 20%;
+    background: pink;
+    border-radius: 50% 50% 50% 50%;
+}
+
+.left-hand {
+    width: 30%;
+    height: 50%;
+    border-radius: 50% 50% 50% 50%;
+    background: var(--penguin-skin, black);
+    transform: rotate(50deg);
+    left: 1%;
+    top: -30%;
+    transform-origin: bottom;
+    animation: move-hand 1s ease-in-out infinite;
+}
+
+.right-hand {
+    width: 30%;
+    height: 50%;
+    border-radius: 50% 50% 50% 50%;
+    background: var(--penguin-skin, black);
+    transform: rotate(310deg);
+    right: -10px;
+}
+
+.left-feet {
+    bottom: -25%;
+    left: 45%;
+    transform: rotate(50deg);
+    transform-origin: top;
+}
+
+.right-feet {
+    bottom: -25%;
+    right: 45%;
+    transform: rotate(310deg);
+    transform-origin: top;
+}
+
+.feet {
+    width: 20%;
+    height: 50%;
+    border-radius: 50% 50% 50% 50%;
+    background: var(--penguin-beak, black);
+    z-index: -1;
+}
+.penguin *{
+    position: absolute;
+}
+
+@keyframes move-hand {
+    0%, 100% {
+        transform: rotate(-30deg);
+    }
+    20% {
+    transform: rotate(-60deg);
+    }
+    30% {
+    transform: rotate(-30deg);
+    }
+    40% {
+    transform: rotate(-60deg);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .penguin {
+        width: 50%;
+        max-height: 1000px;
+    }
+}
+
+@media only screen and (min-height: 1024px) {
+    .penguin {
+        width: 50%;
+        height: 500px;
+    }
+}
+
+@media only screen and (min-height: 1300px) {
+    .penguin {
+        width: 50%;
+        height: 800px;
+    }
+}
