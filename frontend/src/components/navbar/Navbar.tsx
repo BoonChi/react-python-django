@@ -11,6 +11,7 @@ import Interest from '../interest/Interest'
 import Contact from '../contact/Contact'
 import LandingPage from '../landingPage/LandingPage'
 import LoginForm from '../form/LoginForm';
+import basename from '../../react-env'
 interface NavbarItem {
     name: string,
     url: string
@@ -43,7 +44,7 @@ interface NavbarProps {
 }
 const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
     return (
-        <Router>
+        <Router basename={basename}>
             <div className='header-navbar'>
                 <Navbar className="bg-color" color={props.color} light expand="md" fixed='top'>
                     <div>
