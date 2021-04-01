@@ -2,3 +2,4 @@ __pycache__
 studyPython.py 
 utilsModule.py 
 backendMyPortfolio/__pycache__/*
+.env
