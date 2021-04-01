@@ -5,3 +5,4 @@ pygments
 djangorestframework-jwt
 django-cors-headers
 django-extensions
+python-dotenv
