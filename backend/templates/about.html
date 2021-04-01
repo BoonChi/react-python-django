@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>This is About Page</h1>
+<p>yoohoo</p>
+
+<textarea>{{ my_text }} / {{my_number}} </textarea>
+<ul>
+    {% for item in my_list %}
+        <li>{{forloop.counter}} - {{ item }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
