@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-python-django/static/css/main.25864261.chunk.css",
-    "main.js": "/react-python-django/static/js/main.42dd49cd.chunk.js",
-    "main.js.map": "/react-python-django/static/js/main.42dd49cd.chunk.js.map",
+    "main.js": "/react-python-django/static/js/main.ab691eaf.chunk.js",
+    "main.js.map": "/react-python-django/static/js/main.ab691eaf.chunk.js.map",
     "runtime-main.js": "/react-python-django/static/js/runtime-main.7c286841.js",
     "runtime-main.js.map": "/react-python-django/static/js/runtime-main.7c286841.js.map",
     "static/css/2.150d169a.chunk.css": "/react-python-django/static/css/2.150d169a.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.150d169a.chunk.css",
     "static/js/2.f5197bf8.chunk.js",
     "static/css/main.25864261.chunk.css",
-    "static/js/main.42dd49cd.chunk.js"
+    "static/js/main.ab691eaf.chunk.js"
   ]
 }
