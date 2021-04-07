@@ -10,28 +10,69 @@
     justify-content: center;
 }
 
+
 .auth-button {
     margin: 10px;
     background-color: yellowgreen;
     border: 0px transparent;
     border-radius: 10%;
     padding: 10px;
+    bottom: 0px;
+    position: relative;
 }
 
-.auth-title {
+.no-auth-button {
+    background-color: lightblue;
+}
+
+.auth-signup-form {
+    height: 600px;
+}
+.auth-form {
     font-weight: bolder;
-    width: 40%;
+    width: 50%;
     margin: auto;
     background-color: whitesmoke;
     height: 100%;
     border-radius: 5%;
     padding: 30px;
     margin-top: 10%;
-    height: 400px;
 }
 
 .auth-signup {
     text-decoration: underline;
     font-size: 12px;
     cursor: pointer;
+}
+
+input[type="text"], input[type="password"], input[type="number"] {
+    background-color: transparent;   
+    border: 0px;
+    border-bottom: 1px green solid;
+    margin-bottom: 10%;
+    width: 100%;
+    margin-bottom: 0%;
+
+}
+
+label {
+    margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+.auth-action-link {
+    cursor: pointer;
+    color: red;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    align-items: flex-end;
+    text-decoration: underline;
+    font-weight: lighter;
+}
+
+
+span {
+    margin-top: 0%;
+    color: red;
 }

@@ -16,10 +16,8 @@ Including another URLconf
 from django.urls import include, path
 from django.contrib import admin
 # from rest_framework import routers
-from quickstart import views
 from rest_framework_jwt.views import obtain_jwt_token
-from pages.views import home_view, about_view
-from products.views import product_detail_view,product_create_view, product_form_create_view
+
 # Routers provide an easy way of automatically determining the URL conf.
 # router = routers.DefaultRouter()
 # router.register(r'users', views.UserViewSet)
@@ -35,12 +33,7 @@ from products.views import product_detail_view,product_create_view, product_form
 urlpatterns = [
     #...
     # path('', include(router.urls)),
-    path('home/', home_view, name='home'),
-    path('blog/', include('blogs.urls')),
-    path('product/detail', product_detail_view, name='product_detail'),
-    path('product/create', product_create_view, name='product_create'),
-    path('product/create_form', product_form_create_view, name='product_form_create'),
-    path('about/', about_view, name='about'),
     path('admin/', admin.site.urls),
-    path('token-auth/', obtain_jwt_token)
+    path('token-auth/', obtain_jwt_token),
+    path('authentication/', include('authentication.urls'))
 ]

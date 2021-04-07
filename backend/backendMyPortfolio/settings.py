@@ -39,12 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'quickstart.apps.QuickstartConfig',
-    'blogs.apps.BlogsConfig',
-    'products.apps.ProductsConfig',
-    'pages.apps.PagesConfig',
     'corsheaders',
-    'django_extensions'
+    'django_extensions',
+    'authentication'
 ]
 
 MIDDLEWARE = [
@@ -133,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 JWT_AUTH = {
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'backendMyPortfolio.utils.my_jwt_response_handler'
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'authentication.callbacks.jwt_response_handler'
 }
 
 # Internationalization
@@ -158,3 +155,5 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
 #     'https://localhost:3000',
 # )
+
+AUTH_USER_MODEL = 'authentication.User'

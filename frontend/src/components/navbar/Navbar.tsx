@@ -12,36 +12,8 @@ import Contact from '../contact/Contact'
 import LandingPage from '../landingPage/LandingPage'
 import LoginForm from '../form/LoginForm';
 import basename from '../../react-env'
-interface NavbarItem {
-    name: string,
-    url: string
-}
-interface IUserData {  
-    username?: string;  
-    password?: string;
-    first_name?: string;
-    last_name?: string;
-} 
+import { NavbarProps } from "../../react-interface"
 
-interface IErrorObject {
-    [key: string] : string
-}
-interface NavbarProps {
-    brandImage: string
-    brand: string
-    item : NavbarItem[]
-    color: string
-    collapsed : Boolean
-    toggleNavbar : () => void
-    handle_login  : (userData: IUserData) => void;
-    handle_signup : (userData: IUserData) => void;
-    handle_logout : () => void;
-    username : string;
-    showLogInForm : boolean;
-    showSignUpForm : boolean;
-    display_form : (formType: string) => void;
-    error : IErrorObject;
-}
 const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
     return (
         <Router basename={basename}>
@@ -80,24 +52,12 @@ const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
                     </Collapse>
                 </Navbar>
             </div>
-            {props.username && <div className="response-text" style={{marginTop:"10%"}}><h1>Welcome Back {props.username}</h1></div>}
-            { props.showLogInForm && props.error && 
-            <div className="response-text warning-text" style={{marginTop:"10%"}}>
-                {
-                    Object.keys(props.error).map((key,i) => (
-                        <div key={i}>
-                            <p>Error Key: {key}</p>
-                            <p>Error Message: {props.error[key]}</p>
-                        </div>
-                    ))
-                }    
-            </div>}
             <Switch>
-                    <Route exact path="/" component={LandingPage} />   
+                    <Route exact path="/" component={LandingPage}/>   
                     {/* <Route exact path="/aboutMe" component={AboutMe} /> */}
                     <Route exact path="/interest"  component={Interest} />
                     {/* <Route exact path="/contact"  component={Contact} /> */}
-                    <Route exact path="/login" render={() => <LoginForm handle_signup={props.handle_signup} handle_login={props.handle_login} username={props.username} showLogInForm={props.showLogInForm} showSignUpForm={props.showSignUpForm} display_form={props.display_form}></LoginForm>}/>
+                    <Route exact path="/login" render={() => <LoginForm handle_signup={props.handle_signup} handle_login={props.handle_login} email={props.email} showLogInForm={props.showLogInForm} showSignUpForm={props.showSignUpForm} display_form={props.display_form} clearError={props.clearError} error={props.error}></LoginForm>}/>
                 </Switch>
         </Router>
     )
