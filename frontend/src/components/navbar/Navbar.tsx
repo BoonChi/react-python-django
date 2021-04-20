@@ -13,6 +13,7 @@ import LandingPage from '../landingPage/LandingPage'
 import LoginForm from '../form/LoginForm';
 import basename from '../../react-env'
 import { NavbarProps } from "../../react-interface"
+import Form from "../form/Form"
 
 const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
     return (
@@ -57,7 +58,7 @@ const HeaderNavbar: React.FunctionComponent<NavbarProps> = (props) => {
                     {/* <Route exact path="/aboutMe" component={AboutMe} /> */}
                     <Route exact path="/interest"  component={Interest} />
                     {/* <Route exact path="/contact"  component={Contact} /> */}
-                    <Route exact path="/login" render={() => <LoginForm handle_signup={props.handle_signup} handle_login={props.handle_login} email={props.email} showLogInForm={props.showLogInForm} showSignUpForm={props.showSignUpForm} display_form={props.display_form} clearError={props.clearError} error={props.error}></LoginForm>}/>
+                    <Route exact path="/login" render={() => <Form title={"Login"} handle_signup={props.handle_signup} handle_login={props.handle_login} email={props.email} showLogInForm={props.showLogInForm} showSignUpForm={props.showSignUpForm} display_form={props.display_form} clearError={props.clearError} error={props.error}></Form>}/>
                 </Switch>
         </Router>
     )

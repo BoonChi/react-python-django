@@ -35,5 +35,6 @@ urlpatterns = [
     # path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('token-auth/', obtain_jwt_token),
-    path('authentication/', include('authentication.urls'))
+    path('authentication/', include('authentication.urls')),
+    path('tutorial/', include('tutorial.urls'))
 ]

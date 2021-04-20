@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import "./AuthForm.css"
 import { ISignup, IErrorObject, emailFormat, passwordFormat, validatationError} from "../../react-interface"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const SignupForm = (props: ISignup) => {
 
@@ -11,6 +13,7 @@ const SignupForm = (props: ISignup) => {
     const [birth_date, setBirthDate] = useState("")
     const [mobile_number, setMobileNumber] = useState("")
     const [disabledButton, setDisabledButton] = useState(true)
+    const [hidePassword, setHidePassword] = useState(true)
     const [validateError, setValidateError] = useState<IErrorObject>({
         "email" : "",
         "password" : "",
@@ -55,7 +58,7 @@ const SignupForm = (props: ISignup) => {
             setEmail(newValue)
         }else if(name === "password") {
             if(!newValue) validatationError["password"] = "Password cannot be NULL"
-            else if(!passwordFormat.test(newValue)) validatationError["password"] = "Password only contains words or digits"
+            else if(!passwordFormat.test(newValue)) validatationError["password"] = "Password only contains words or digits at least 8 characters"
             else validateError["password"] = ""
             setPassword(newValue)
         }else if(name === "first_name") {
@@ -69,7 +72,7 @@ const SignupForm = (props: ISignup) => {
             else validateError["mobile_number"] = ""
             setMobileNumber(newValue)
         }
-        if(validatationError['email'] || validatationError['password'] || validatationError['mobile_number']) {
+        if(validatationError['email'] || validatationError['password'] || validatationError['mobile_number'] || !email || !password || !mobile_number) {
             setDisabledButton(true)
         }else {
             setDisabledButton(false)
@@ -77,6 +80,14 @@ const SignupForm = (props: ISignup) => {
         setValidateError(validatationError)
     }
 
+    const handleHidePasswordChange = (input:string) => {
+        if(input === "unhide") {
+            setHidePassword(false)
+        }else{
+            setHidePassword(true)
+        }
+
+    }
     const clearForm = () => {
         setEmail("")
         setPassword("")
@@ -104,7 +115,18 @@ const SignupForm = (props: ISignup) => {
             </div>
             <div className="auth-input-field">
                 <div><label>Password<span>*</span></label></div>
-                <input type="password" name="password" value={password} onChange={handleChange}/>
+                
+                { hidePassword ? 
+                <div className="password-row">
+                    <input type="password" name="password" value={password} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faEye} onClick={() => handleHidePasswordChange("unhide")}></FontAwesomeIcon>
+                </div>
+                : 
+                <div className="password-row">
+                    <input type="text" name="password" value={password} onChange={handleChange}/>
+                    <FontAwesomeIcon icon={faEyeSlash} onClick={() => handleHidePasswordChange("hide")}></FontAwesomeIcon>
+                </div>
+                }
                 { validateError["password"] && <div>{
                     <span>{validateError["password"]}</span>
                 }

@@ -60,7 +60,7 @@ const LoginForm = (props:Ilogin) => {
             
             { props.showLogInForm && !props.showSignUpForm && 
                 <div className='auth-form'>
-                    <h1>LOGIN</h1>
+                    <h1 className="auth-title">LOGIN</h1>
                     { props.showLogInForm && props.error && <div>{
                         <span>{props.error["non_field_errors"]}</span>
                     }
@@ -99,8 +99,8 @@ const LoginForm = (props:Ilogin) => {
                 }
                 { props.showSignUpForm && !props.showLogInForm && 
                 <div className='auth-form auth-signup-form'>
-                    <h1>REGISTRATION</h1>
-                    <SignupForm showSignUpForm={props.showSignUpForm} email={props.email} error={props.error} handle_signup={props.handle_signup} display_form={props.display_form} clearError={props.clearError}></SignupForm>
+                    <h1 className="auth-title">REGISTRATION</h1>
+                    <SignupForm title={"Registration"} showSignUpForm={props.showSignUpForm} email={props.email} error={props.error} handle_signup={props.handle_signup} display_form={props.display_form} clearError={props.clearError}></SignupForm>
                 </div>
             }
         </div>

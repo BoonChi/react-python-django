@@ -14,6 +14,7 @@ export interface Ilogin {
     display_form : (formType: string) => void;
     clearError : () => void;
     error : IErrorObject;
+    title : string;
 } 
 
 export interface ISignup {  
@@ -23,6 +24,7 @@ export interface ISignup {
     email : string;
     error : IErrorObject;
     showSignUpForm : boolean;
+    title : string;
 } 
 
 interface NavbarItem {
@@ -52,9 +54,9 @@ export interface NavbarProps {
     clearError : () => void;
 }
 
-export const emailFormat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const emailFormat = /^[a-zA-Z0-9\_]+\@[a-z0-9]+(\.[a-z0-9]+)*\.([a-z0-9]{2,})$/
 
-export const passwordFormat = /^[A-Za-z0-9]+$/
+export const passwordFormat = /^([A-Za-z0-9]{8,})+$/
 
 export const validatationError = {
     "email": "",
